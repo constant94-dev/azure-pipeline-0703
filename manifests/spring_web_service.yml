@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: spring-app
+  name: spring-web-svc
 spec:
   selector:
-    app: spring-app
+    app: spring-web-app
   ports:
   - protocol: TCP
     port: 8080

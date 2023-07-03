@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-tv-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-tv-alpine
+  template:
+    metadata:
+      labels:
+        app: nginx-tv-alpine
+    spec:
+      nodeSelector:
+        my-label-key: aks-defaultpool-63129824-vmss000001
+      containers:
+        - name: nginx-alpine
+          image: acrprod0327.azurecr.io/production/nginx-tv-alpine
+          ports:
+          - containerPort: 80

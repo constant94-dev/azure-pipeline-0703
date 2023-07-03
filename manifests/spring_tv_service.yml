@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-tv-svc
+spec:
+  selector:
+    app: spring-tv-app
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080

@@ -1,19 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deploy
+  name: nginx-web-deploy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx-app
+      app: nginx-web-alpine
   template:
     metadata:
       labels:
-        app: nginx-app
+        app: nginx-web-alpine
     spec:
+      nodeSelector:
+        my-label-key: aks-defaultpool-63129824-vmss000000
       containers:
         - name: nginx-alpine
-          image: acrprod0327.azurecr.io/production/nginx-alpine
+          image: acrprod0327.azurecr.io/production/nginx-web-alpine
           ports:
           - containerPort: 80
