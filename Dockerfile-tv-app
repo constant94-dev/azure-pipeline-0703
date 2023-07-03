@@ -14,17 +14,15 @@ COPY tvPatron/settings.gradle /tvapp
 COPY tvPatron/src /tvapp/src
 
 # Change permissions on Gradle Wrapper
-RUN chmod +x tvPatron/gradlew
+RUN chmod +x /tvapp/gradlew
 
 # Build application
-RUN tvPatron/gradlew clean build
-# Rename JAR file
-# RUN mv /app/build/libs/patron-webMobile-1.2.4-SNAPSHOT.jar /app/app.jar
+RUN /tvapp/gradlew clean build
 
 # Run JAR Stage
 FROM openjdk:11-jre-slim
 # 작업 디렉토리를 '/app'로 설정
-WORKDIR /app
+WORKDIR /tvapp
 
 # # 이전 단계에서 'builder' 라는 이름의 스테이지에서 JAR 파일을 'app' 디렉토리로 복사한다.
 COPY --from=builder /tvapp/build/libs/patron-webMobile-1.2.4-SNAPSHOT.jar /tvapp/app.jar
