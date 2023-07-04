@@ -4,7 +4,7 @@ metadata:
   name: spring-tv-svc
 spec:
   selector:
-    app: spring-tv-app
+    app: spring-tv-svc
   ports:
   - protocol: TCP
     port: 8080

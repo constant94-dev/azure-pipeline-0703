@@ -6,11 +6,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: spring-web-app
+      app: spring-web-svc
   template:
     metadata:
       labels:
-        app: spring-web-app
+        app: spring-web-svc
     spec:
       nodeSelector:
         my-label-key: aks-defaultpool-63129824-vmss000000

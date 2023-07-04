@@ -6,11 +6,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx-web-alpine
+      app: nginx-web-svc
   template:
     metadata:
       labels:
-        app: nginx-web-alpine
+        app: nginx-web-svc
     spec:
       nodeSelector:
         my-label-key: aks-defaultpool-63129824-vmss000000

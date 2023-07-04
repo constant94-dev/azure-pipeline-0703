@@ -6,7 +6,7 @@ metadata:
       service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
   selector:
-    app: nginx-tv-alpine
+    app: nginx-tv-svc
   ports:
   - protocol: TCP
     port: 80

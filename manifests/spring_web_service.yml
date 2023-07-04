@@ -4,7 +4,7 @@ metadata:
   name: spring-web-svc
 spec:
   selector:
-    app: spring-web-app
+    app: spring-web-svc
   ports:
   - protocol: TCP
     port: 8080
