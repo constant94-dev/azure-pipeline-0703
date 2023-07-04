@@ -12,8 +12,6 @@ spec:
       labels:
         app: nginx-web-svc
     spec:
-      nodeSelector:
-        my-label-key: aks-defaultpool-63129824-vmss000000
       containers:
         - name: nginx-web-alpine
           image: acrprod0327.azurecr.io/production/nginx-web-alpine

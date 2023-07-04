@@ -12,8 +12,6 @@ spec:
       labels:
         app: nginx-tv-svc
     spec:
-      nodeSelector:
-        my-label-key: aks-defaultpool-63129824-vmss000001
       containers:
         - name: nginx-tv-alpine
           image: acrprod0327.azurecr.io/production/nginx-tv-alpine

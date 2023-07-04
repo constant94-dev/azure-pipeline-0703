@@ -12,8 +12,6 @@ spec:
       labels:
         app: spring-tv-svc
     spec:
-      nodeSelector:
-        my-label-key: aks-defaultpool-63129824-vmss000001
       containers:
         - name: spring-tv-app
           image: acrprod0327.azurecr.io/production/spring-tv-app
