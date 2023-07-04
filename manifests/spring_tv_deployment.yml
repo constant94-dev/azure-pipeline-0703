@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-deploy
+  name: spring-tv-deploy
 spec:
   replicas: 3
   selector:
@@ -15,7 +15,7 @@ spec:
       nodeSelector:
         my-label-key: aks-defaultpool-63129824-vmss000001
       containers:
-        - name: spring-app
+        - name: spring-tv-app
           image: acrprod0327.azurecr.io/production/spring-tv-app
           ports:
           - containerPort: 8080

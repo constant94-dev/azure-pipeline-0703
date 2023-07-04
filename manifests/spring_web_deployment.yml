@@ -15,7 +15,7 @@ spec:
       nodeSelector:
         my-label-key: aks-defaultpool-63129824-vmss000000
       containers:
-        - name: spring-app
+        - name: spring-web-app
           image: acrprod0327.azurecr.io/production/spring-web-app
           ports:
           - containerPort: 8080

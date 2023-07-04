@@ -15,7 +15,7 @@ spec:
       nodeSelector:
         my-label-key: aks-defaultpool-63129824-vmss000001
       containers:
-        - name: nginx-alpine
+        - name: nginx-tv-alpine
           image: acrprod0327.azurecr.io/production/nginx-tv-alpine
           ports:
           - containerPort: 80
