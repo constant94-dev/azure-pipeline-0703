@@ -177,10 +177,11 @@ public class MainController {
             HttpSession session) {
         String email = (String) session.getAttribute("email_session");
         String language = "en";
+        System.out.println("am i here");
         if (email != null) {
             if (deviceId == session.getAttribute("deviceId_session") && loginToTvService.checkLoginStatus(deviceId).isPresent()) {
                 language = memberService.getPreferredLanguage(email);
-                return "redirect:/" + language + "/home";
+                return "redirect:https://dev.tvpatron.com" + language + "/home";
             } else {
                 loginToTvService.logout(email);
                 session.invalidate();
@@ -190,15 +191,17 @@ public class MainController {
         request.getSession().setAttribute("deviceName_session", deviceName);
         request.getSession().setAttribute("provider_session", provider);
         String localization = ipTableService.getLocalizationByIp(request);
+        System.out.println("Here first");
+        System.out.println(localization);
         switch (localization) {
             case "kr":
-                return "redirect:/ko/smartTvLogin";
+                return "redirect:https://dev.tvpatron.com/ko/smartTvLogin";
             case "jp":
-                return "redirect:/ja/smartTvLogin";
+                return "redirect:https://dev.tvpatron.com/ja/smartTvLogin";
             default:
                 break;
         }
-        return "redirect:/" + language + "/smartTvLogin";
+        return "redirect:https://dev.tvpatron.com/" + language + "/smartTvLogin";
     }
     @GetMapping("/smartTvLogin")
     public String redirectToLogin(@RequestParam(required = false, name = "provider") String provider,
@@ -211,7 +214,7 @@ public class MainController {
         if(email!=null){
             if(deviceId == session.getAttribute("deviceId_session")){
                 language = memberService.getPreferredLanguage(email);
-                return "redirect:/" + language + "/home";
+                return "redirect:https://dev.tvpatron.com/" + language + "/home";
             }else{
                 loginToTvService.logout(email);
                 session.invalidate();
@@ -223,6 +226,8 @@ public class MainController {
             request.getSession().setAttribute("provider_session", provider);
         }
         String localization = ipTableService.getLocalizationByIp(request);
+        System.out.println("TEST");
+        System.out.println(localization);
         switch (localization) {
             case "kr":
                 return "redirect:https://dev.tvpatron.com/ko/smartTvLogin";
