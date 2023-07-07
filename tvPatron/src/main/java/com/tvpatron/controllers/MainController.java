@@ -231,7 +231,7 @@ public class MainController {
             default:
                 break;
         }
-        return "redirect:https://tvpatron.com/" + language + "/smartTvLogin";
+        return "redirect:https://dev.tvpatron.com/" + language + "/smartTvLogin";
     }
     @GetMapping("/{language}/smartTvLogin")
     public String samsungLogin(@PathVariable String language) {
