@@ -238,6 +238,12 @@ public class MainController {
         }
         return "redirect:https://dev.tvpatron.com/" + language + "/smartTvLogin";
     }
+
+    @GetMapping("/test/asd")
+    public String testasd(){
+        return "redirect:/"
+    }
+
     @GetMapping("/{language}/smartTvLogin")
     public String samsungLogin(@PathVariable String language) {
         return "smartTvLogin/login";
