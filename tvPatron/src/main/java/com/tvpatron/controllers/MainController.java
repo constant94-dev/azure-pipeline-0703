@@ -241,7 +241,7 @@ public class MainController {
 
     @GetMapping("/test/asd")
     public String testasd(){
-        return "redirect:/"
+        return "redirect:/";
     }
 
     @GetMapping("/{language}/smartTvLogin")
