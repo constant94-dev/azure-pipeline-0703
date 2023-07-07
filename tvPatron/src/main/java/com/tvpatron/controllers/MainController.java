@@ -225,7 +225,7 @@ public class MainController {
         String localization = ipTableService.getLocalizationByIp(request);
         switch (localization) {
             case "kr":
-                return "redirect:/ko/smartTvLogin";
+                return "redirect:https://dev.tvpatron.com/ko/smartTvLogin";
             case "jp":
                 return "redirect:/ja/smartTvLogin";
             default:
