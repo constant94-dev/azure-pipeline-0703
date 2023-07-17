@@ -107,6 +107,7 @@ stages:
               kubernetesServiceConnection: $(kubernetesServiceConnection)
               rolloutStatusTimeout: 
               manifests: |
+                $(System.ArtifactsDirectory)/manifests/ingress.yml
                 $(System.ArtifactsDirectory)/manifests/nginx_web_deployment.yml
                 $(System.ArtifactsDirectory)/manifests/nginx_web_service.yml
                 $(System.ArtifactsDirectory)/manifests/spring_web_deployment.yml
