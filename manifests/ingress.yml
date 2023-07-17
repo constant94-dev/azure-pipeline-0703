@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: azure/application-gateway
 spec:
   rules:
-  - host: dev.patron.digital
+  - host: "dev.patron.digital"
     http:
       paths:
       - path: /
@@ -16,7 +16,7 @@ spec:
             name: nginx-web-svc
             port:
               number: 80
-  - host: dev.tvpatron.com
+  - host: "dev.tvpatron.com"
     http:
       paths:
       - path: /
