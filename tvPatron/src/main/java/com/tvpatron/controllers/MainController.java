@@ -178,6 +178,7 @@ public class MainController {
         String email = (String) session.getAttribute("email_session");
         String language = "en";
         System.out.println("am i here");
+        System.out.println("현재 도메인: "+request.getServerName());
         if (email != null) {
             if (deviceId == session.getAttribute("deviceId_session") && loginToTvService.checkLoginStatus(deviceId).isPresent()) {
                 language = memberService.getPreferredLanguage(email);
@@ -226,7 +227,7 @@ public class MainController {
             request.getSession().setAttribute("provider_session", provider);
         }
         String localization = ipTableService.getLocalizationByIp(request);
-        System.out.println("TEST");
+        System.out.println("현재 도메인: "+request.getServerName());
         System.out.println(localization);
         switch (localization) {
             case "kr":
@@ -237,11 +238,6 @@ public class MainController {
                 break;
         }
         return "redirect:https://dev.tvpatron.com/" + language + "/smartTvLogin";
-    }
-
-    @GetMapping("/test/asd")
-    public String testasd(){
-        return "redirect:/";
     }
 
     @GetMapping("/{language}/smartTvLogin")
