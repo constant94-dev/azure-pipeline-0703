@@ -9,7 +9,9 @@ spec:
   - host: dev.patron.digital
     http:
       paths:
-      - backend:
+      - path: /
+        pathType: Prefix
+        backend:
           service:
             name: nginx-web-svc
             port:
@@ -17,7 +19,9 @@ spec:
   - host: dev.tvpatron.com
     http:
       paths:
-      - backend:
+      - path: /
+        pathType: Prefix
+        backend:
           service:
             name: nginx-tv-svc
             port:
