@@ -10,15 +10,15 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '8d0eba92-408e-4dcb-9540-400b1c904c11'
-  kubernetesServiceConnection: 'dac1f9e7-57e9-4644-be6c-73512bc44703'
+  dockerRegistryServiceConnection: '[azure-docker-registry-service-connection]'
+  kubernetesServiceConnection: '[azure-k8s-service-connection]'
   k8sNamespace: default
   hosted: ms-hosted
   imageRepository: 'production'
-  azureContainerRegistry: acrprod0327.azurecr.io
+  azureContainerRegistry: '[acr-login-server].azurecr.io'
   azureSubscriptionEndpoint: scn-arm0509
   tag: $(Build.BuildId)
-  imagePullSecret: patron-auth
+  imagePullSecret: '[auth-name]'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'

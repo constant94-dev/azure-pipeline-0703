@@ -74,12 +74,3 @@ configurations {
     }
     querydsl.extendsFrom compileClasspath
 }
-
-////
-//dependencyManagement {
-//    imports {
-//        mavenBom "org.springframework.boot:spring-boot-dependencies:2.5.0"
-//    }
-//    dependencies {
-//    }
-//}
